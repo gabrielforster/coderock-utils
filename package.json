@@ -1,0 +1,40 @@
+{
+  "name": "@gabrielforster/coderock-utils",
+  "version": "1.0.0",
+  "description": "Just a npm package to simplify dev daily work!",
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p ./tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielforster/coderock-utils.git"
+  },
+  "keywords": [],
+  "author": "gabrielforster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielforster/coderock-utils/issues"
+  },
+  "homepage": "https://github.com/gabrielforster/coderock-utils#readme",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+  "types": "./lib/cjs/types/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "files": [
+    "lib/**/*"
+  ]
+}
