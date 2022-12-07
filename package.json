@@ -1,6 +1,6 @@
 {
   "name": "@gabrielforster/coderock-utils",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Just a npm package to simplify dev daily work!",
   "scripts": {
     "clean": "rm -rf ./lib",
@@ -13,6 +13,12 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gabrielforster/coderock-utils.git"
+  },
+  "release": {
+    "branches": ["main"]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [],
   "author": "gabrielforster",
