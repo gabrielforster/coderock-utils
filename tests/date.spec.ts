@@ -1,7 +1,7 @@
 import "mocha"
 import { assert } from "chai"
 
-import date from "../src/date"
+import { date } from "../src"
 
 describe("Date function", () => {
 	it("should be an object", () => {
