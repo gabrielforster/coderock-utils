@@ -8,6 +8,8 @@ export function goodBye() {
   return message;
 }
 
+export { default as date } from "./date"
+
 export default {
   helloWorld,
   goodBye,
