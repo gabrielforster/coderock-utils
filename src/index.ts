@@ -1,1 +1,3 @@
-export { default as date } from "./date"
+export { format } from "./format"
+export { getDaysDiff } from "./diffDays"
+export { getTimeDiff } from "./diffTime"
