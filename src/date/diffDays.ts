@@ -1,4 +1,4 @@
-export function getDaysDiff(date: string | Date, initDate?: string | Date): number{
+export function getDaysDiff(date: string | Date, initDate?: string | Date, exactMatch?: boolean): number{
 	date = new Date(date);
 	initDate = initDate ? new Date(initDate) : new Date();
 
@@ -6,5 +6,7 @@ export function getDaysDiff(date: string | Date, initDate?: string | Date): numb
 
 	const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
-	return days;
+	if(exactMatch) return days;
+
+	return Math.abs(days);
 }

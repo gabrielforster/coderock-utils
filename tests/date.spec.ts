@@ -44,17 +44,23 @@ describe("GetDaysDiff", () => {
 		assert.isFunction(coderock.getDaysDiff)
 	});
 
+	it("should return the days difference with postive value", () => {
+		const expected = 1
+		const actual = coderock.getDaysDiff("2019-01-01", "2019-01-02")
+		assert.equal(actual, expected)
+	});
+
 	it("should return the days difference", () => {
 		const expected = 1
 		const actual = coderock.getDaysDiff("2019-01-02", "2019-01-01")
 		assert.equal(actual, expected)
 	});
-
-	it("should return the days difference", () => {
-		const expected = 0
-		const actual = coderock.getDaysDiff("2019-01-01", "2019-01-01")
+	
+	it("should return the days difference with negative value", () => {
+		const expected = -2
+		const actual = coderock.getDaysDiff("2022-12-06", "2022-12-08", true)
 		assert.equal(actual, expected)
-	});
+	})
 });
 
 describe("GetTimeDiff", () => {
@@ -63,10 +69,16 @@ describe("GetTimeDiff", () => {
 	});
 
 	it("should return the time difference", () => {
+		const expected = -86400000
+		const actual = coderock.getTimeDiff("2019-01-01", "2019-01-02", true)
+		assert.equal(actual, expected)
+	});
+
+	it("should return the time difference with positive value",  () => {
 		const expected = 86400000
 		const actual = coderock.getTimeDiff("2019-01-02", "2019-01-01")
 		assert.equal(actual, expected)
-	});
+	})
 
 	it("should return the time difference", () => {
 		const expected = 0
