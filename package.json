@@ -1,6 +1,6 @@
 {
   "name": "coderock-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Just a npm package to simplify dev daily work!",
   "scripts": {
     "clean": "rm -rf ./lib",
